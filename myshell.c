@@ -166,13 +166,15 @@ int sh_execute(char **args){
                 //close the child
                // exit(0);
             }
+            //if your command is to list
             else if (strcmp(args[0], listCMD) == 0){
                 printf("\n\n\listing %s", args[1]);
                 printf("\n");
               //  list(args[1]);
                 //close the child
                 exit(0);}
-            else (strcmp(args[0], dirCMD) == 0){
+            //if your command is to show directory
+            else if (strcmp(args[0], dirCMD) == 0){
                 dir();
             }
             else{
