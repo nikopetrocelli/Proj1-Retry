@@ -140,6 +140,17 @@ int sh_execute(char **args){
         pid_t pid2;
 
         pid_t cpid;
+
+        //before creating a child process, check for exit
+        if (strcmp(args[0], halt) == 0){
+                printf("\n\n\nGoodbye!\n\n\n");
+                //wait for message to be read
+                sleep(1);
+                 //Clean up our mess by clearing out the console
+                system("clear");
+                return 0;
+            }
+
         if (fork()==0){
             //in the child process now
             pid2 = getpid();
@@ -151,17 +162,11 @@ int sh_execute(char **args){
            // printf("%s", args[0]);
             char *command = args[0];
             printf("%s", command);
-            if (strcmp(args[0], halt) == 0){
-                printf("\n\n\nGoodbye!\n\n\n");
-                //wait for message to be read
-                sleep(1);
-                 //Clean up our mess by clearing out the console
-                system("clear");
-                return 0;
+            if (strcmp(args[0], create) == 0){
+                printf("\n\n\Creating!\n\n\n");
             }
             else{
                 printf("\nInvalid command\n");
-                return 0;
             }
 
              
