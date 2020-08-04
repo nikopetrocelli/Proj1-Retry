@@ -166,7 +166,7 @@ int sh_execute(char **args){
             if (strcmp(args[0], create) == 0){
                 printf("\n\n\Creating!%s", args[1]);
                 printf("\n");
-                create(args[1])
+                create(args[1]);
                 //close the child
                 exit(0);
             }
