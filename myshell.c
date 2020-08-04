@@ -184,7 +184,7 @@ int sh_execute(char **args){
                 while(args[i] != NULL){
                     strcat(buffer, args[i]);
                     //add space between words
-                    strcat(buffer, ' ');
+                   // strcat(buffer, ' ');
                     i++;
                 }
                 printf("\nMessage is %s", buffer);
