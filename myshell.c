@@ -175,8 +175,16 @@ int sh_execute(char **args){
                 dir();
             }
             else if (strcmp(args[0], updateCMD)==0){
-                for (int i = 0; i < 10; i++){
-                    printf("\nUpdating %s", args[i]);}
+                char buffer [500];
+                //for (int i = 0; i < 10; i++){
+                   // printf("\nUpdating %s", args[i]);}
+                int i = 0;
+                while(args[i] != NULL){
+                    strcat(buffer, args[i];
+                    i++;
+                }
+                printf("\nMessage is %s", buffer);};
+                    
                     exit(0);
             }
             
