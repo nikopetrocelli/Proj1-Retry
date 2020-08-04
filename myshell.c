@@ -178,8 +178,8 @@ int sh_execute(char **args){
                 for (int i = 0; i < 10; i++){
                     printf("\nUpdating %s", args[i]);}
                     exit(0);
-                }
             }
+            
             else{
                 printf("\nInvalid command\n");
                 exit(0);
