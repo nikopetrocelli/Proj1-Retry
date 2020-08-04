@@ -185,6 +185,7 @@ int sh_execute(char **args){
         }
         else{
             cpid = wait(NULL);
+            return 1;
         }
 
 }
