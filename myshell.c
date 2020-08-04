@@ -177,13 +177,17 @@ int sh_execute(char **args){
             printf("\nThe child pid is:  %d", pid2);
 		    printf("\n");
         // first arg is your command
-             //printf("\nin the child%s ", args[0]);
-            // printf("\n");
+             printf("\nin the child%s ", args[0]);
+            printf("\n");
         char currentCommand = args[0];
         printf(" %s", currentCommand, args[0]);
            // switch
 
-             exit(0);
+             
+             
+             
+             
+        exit(0);
 
         }
         else{
@@ -215,8 +219,8 @@ int main(int argv, const char *argc[]) {
 
         printf("> ");
         cmd = sh_read();
-        printf("\nThe input was %s", cmd);
-        printf("\n");
+       // printf("\nThe input was %s", cmd);
+        //printf("\n");
         args = sh_parse(cmd);
        //debug lines
        // printf("\nThe paramaters are %s");
