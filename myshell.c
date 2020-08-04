@@ -162,6 +162,7 @@ char **sh_parse(char *cmd){
     token = strtok(NULL, LSH_TOK_DELIM);
   }
   tokens[position] = NULL;
+  printf("%n%s", tokens);
   return tokens;
 
 }
