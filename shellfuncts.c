@@ -63,10 +63,11 @@ void create(const char *name){
 
 void list (const char*name){
 		FILE *file;
+		char buffer[200];
 	//does the file exist ?
 	if ((file = fopen(name,"r"))){
-		snprintf(command, bufsize, "cat %s", name);
-		execl(command, "cat", <name>)
+		//snprintf('list ', bufsize, "cat %s", name);
+		execl("/bin/cat", "cat", name);
 		fclose(file);
 		//Close the child
 		exit(0);

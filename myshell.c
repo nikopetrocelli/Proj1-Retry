@@ -174,6 +174,12 @@ int sh_execute(char **args){
             else if (strcmp(args[0], dirCMD) == 0){
                 dir();
             }
+            else if (strcmp(args[0], updateCMD)==0){
+                for (int i = 0; i < 10; i++){
+                    printf("\nUpdating %s", args[i])
+                    exit(0);
+                }
+            }
             else{
                 printf("\nInvalid command\n");
                 exit(0);
