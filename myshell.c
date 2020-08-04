@@ -67,7 +67,7 @@ char *sh_read(void){
 
     char *cmd = NULL;
     ssize_t size = 0; //getline will handle the size allocation
-    if(getline(&cmd, &bufsize, stdin)== -1){
+    if(getline(&cmd, &size, stdin)== -1){
         if (feof(stdin)){
             exit(0); //EOF
         }
