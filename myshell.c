@@ -198,9 +198,10 @@ int main(int argv, const char *argc[]) {
         printf("\nThe input was %s", cmd);
         printf("\n");
         args = sh_parse(cmd);
-        for(int i =0; i < 5 ; i++){
-        printf("\nThe paramaters are %s", args[i]);
-        printf("\n");}
+        printf("\nThe paramaters are %s");
+        for(int i =0; i < 5 ; i++)
+        printf("\n%s", args[i]);
+        printf("\n");
        // execFlag = sh_execute(args);
 
        // free(line);
