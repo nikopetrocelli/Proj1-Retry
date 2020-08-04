@@ -182,7 +182,7 @@ int sh_execute(char **args){
                 int i = 3 ;
                 //Concatonate the arguments to create the message
                 while(args[i] != NULL){
-                    strcat(buffer, args[i]);
+                    strcat(buffer, args[i] + ' ');
                     //add space between words
                    // strcat(buffer, ' ');
                     i++;
