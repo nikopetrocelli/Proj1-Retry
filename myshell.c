@@ -197,7 +197,7 @@ int main(int argv, const char *argc[]) {
     
 
     //loop the program
-    While(1){
+    while(1){
         //Tell the user the pid		
         pid_t pid1 = getpid();
 		printf("\nThe parent pid is:  %d", pid1);
