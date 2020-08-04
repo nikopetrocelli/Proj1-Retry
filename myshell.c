@@ -140,7 +140,7 @@ int sh_execute(char **args){
         }
     }
     */
-
+/*
   pid_t pid, wpid;
   int status;
 
@@ -162,7 +162,31 @@ int sh_execute(char **args){
   }
 
   return 1;
+*/
 
+        //Tell the user the pid		
+        pid_t pid1 = getpid();
+		printf("\nThe current pid is:  %d", pid1);
+		printf("\n");
+        pid_t pid2;
+
+        pid_t cpid;
+        if (fork()==0){
+            //in the child process now
+            exec();
+            pid2 = getpid();
+            printf("\nThe current pid is:  %d", pid1);
+		    printf("\n");
+        // first arg is your command
+             printf("\nin the child%s", args[0]);
+             printf("\n");
+
+             exit(0);
+
+        }
+        else{
+            cpid = wait(NULL);
+        }
 
 }
 
@@ -184,10 +208,6 @@ int main(int argv, const char *argc[]) {
     //loop the program
     do{
 
-        //Tell the user the pid		
-        pid_t pid1 = getpid();
-		printf("\nThe current pid is:  %d", pid1);
-		printf("\n");
         //get the user input
 
         printf("> ");
