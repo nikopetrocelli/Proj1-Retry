@@ -117,7 +117,7 @@ char **sh_parse(char *cmd){
         //if the position goes past the max size, error
         if (pos >= size){
             printf("\nToo much stuff entered\n");
-            exit(0)
+            exit(0);
         }
 
         param = strtok(NULL, TOKEN_DE);
