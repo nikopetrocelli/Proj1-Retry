@@ -62,8 +62,21 @@ void create(const char *name){
 }
 
 void list (const char*name){
-
-
+		FILE *file;
+	//does the file exist ?
+	if ((file = fopen(name,"r"))){
+		snprintf(command, bufsize, "cat %s", name);
+		execl(command, "cat", <name>)
+		fclose(file);
+		//Close the child
+		exit(0);
+	}
+	//Else no it doesn't exist
+	else{
+		fclose(file);
+		printf("\nThis file does not exist\n");
+		//Close the child
+		exit(0);}
 
 }
 void dir(){
