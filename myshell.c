@@ -167,9 +167,9 @@ int sh_execute(char **args){
             if (strcmp(args[0], create) == 0){
                 printf("\n\n\Creating!%s", args[1]);
                 printf("\n");
-                create(args[1]);
+                //create(args[1]);
                 //close the child
-                exit(0);
+                return 1;
             }
             else{
                 printf("\nInvalid command\n");
@@ -218,13 +218,19 @@ int main(int argv, const char *argc[]) {
         //check for exit
         execFlag = sh_execute(args);
 
+        if (execFlag = 1){
+            printf("\n%d", execFlag);
+
+
+        }
+
        // free(line);
         //free(args); 
 
 
         
 
-    }while (execFlag);
+    }while (execFlag != 0);
 
 
 
