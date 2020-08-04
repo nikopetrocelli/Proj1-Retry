@@ -92,7 +92,7 @@ FILE *file;
 	//does the file exist already?
 	if ((file = fopen(name,"r"))){
 		fclose(file);
-		file = fopen(name,"a")
+		file = fopen(name,"a");
 			for (int i = 0; i < num; i++){
 				fprintf(text);
 			}
