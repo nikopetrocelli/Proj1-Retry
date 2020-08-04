@@ -128,7 +128,7 @@ int sh_execute(char **args){
     #include "shellfuncts.h"
     //define our commands
     const char* halt = "halt";
-	const char* create = "create";
+	const char* createNew = "create";
 	const char* update = "update";
 	const char* list = "list";
 	const char* dir = "dir";
@@ -167,9 +167,9 @@ int sh_execute(char **args){
             if (strcmp(args[0], create) == 0){
                 printf("\n\n\Creating!%s", args[1]);
                 printf("\n");
-                //create(args[1]);
+                create(args[1]);
                 //close the child
-                return 1;
+                //return 1;
             }
             else{
                 printf("\nInvalid command\n");
