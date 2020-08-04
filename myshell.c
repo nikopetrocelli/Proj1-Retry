@@ -78,7 +78,7 @@ char *sh_read(void){
 
     }
 
-    return buff
+    return buff;
 
 
 }
