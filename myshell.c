@@ -180,8 +180,9 @@ int sh_execute(char **args){
            // printf("\nin the child%s ", args[0]);
            // printf("\n");
            // printf("%s", args[0]);
-
-            switch(args[0]){
+            char *command = args[0];
+            printf("%s", command);
+            switch(command){
                 case 'halt' :
                 	printf("\n\n\nGoodbye!\n\n\n");
                     //wait for message to be read
@@ -191,7 +192,7 @@ int sh_execute(char **args){
                     //Quit the program;
                     flag = 0;
                     break;
-                default
+                default:
                 printf("\nInvalid command\n");
             }
 
