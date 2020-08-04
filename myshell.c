@@ -124,6 +124,7 @@ char **sh_parse(char *cmd){
         
         //printf("\n%s", param);
         printf("\n%s", paramList[pos]);
+        printf("\nthe pos is %d", pos);
         param = strtok(NULL, TOKEN_DE);
     }
     
