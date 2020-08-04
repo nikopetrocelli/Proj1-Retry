@@ -148,7 +148,8 @@ int sh_execute(char **args){
                 sleep(1);
                  //Clean up our mess by clearing out the console
                 system("clear");
-                exit(0);
+                return 0;
+                //exit(0);
             }
 
         if (fork()==0){
@@ -164,6 +165,8 @@ int sh_execute(char **args){
             printf("%s", command);
             if (strcmp(args[0], create) == 0){
                 printf("\n\n\Creating!\n\n\n");
+                //close the child
+                exit(0);
             }
             else{
                 printf("\nInvalid command\n");
