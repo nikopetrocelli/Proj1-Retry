@@ -125,6 +125,7 @@ char **sh_parse(char *cmd){
 }
 
 int sh_execute(char **args){
+    #include "shellfuncts.h"
     //define our commands
     const char* halt = "halt";
 	const char* create = "create";
