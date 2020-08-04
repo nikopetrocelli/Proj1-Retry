@@ -192,7 +192,7 @@ int sh_execute(char **args){
                    // exit(0);
                 
                 //Arg 1 is our filename, arg 2 is our num of times and buffer is our text string we just created
-                update(arg[1], arg[2], buffer);
+                update(args[1], args[2], buffer);
             
             }
             
