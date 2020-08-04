@@ -45,8 +45,7 @@ void send_msg(const char *param2) {
 void create(const char *name){
 	FILE *file;
 	//does the file exist already?
-	if ((file = fopen(name,"r"))){
-		fclose(file);
+	if (doesFileExist(name){
 		printf("\nThis file already exists\n");
 		//Close the child
 		exit(0);
