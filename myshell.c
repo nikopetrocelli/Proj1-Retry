@@ -56,9 +56,11 @@ char *sh_read(void){
             return buff;
 
         }
+        //if we aren't at the end, then add the character to the string
         else{
             buff[pos] = c;
         }
+        //advance to the next position in the string
         pos++;
     }
 
@@ -84,6 +86,7 @@ int main(int argv, const char *argc[]) {
         printf("> ");
         cmd = sh_read();
         printf("\n%s", cmd);
+        printf("\n");
         //args = sh_split_line(cmd);
        // execFlag = sh_execute(args);
 
