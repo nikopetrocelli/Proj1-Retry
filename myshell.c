@@ -176,7 +176,7 @@ int sh_execute(char **args){
             }
             else if (strcmp(args[0], updateCMD)==0){
                 for (int i = 0; i < 10; i++){
-                    printf("\nUpdating %s", args[i])
+                    printf("\nUpdating %s", args[i]);
                     exit(0);
                 }
             }
