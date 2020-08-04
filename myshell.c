@@ -188,9 +188,11 @@ int sh_execute(char **args){
                    // strcat(buffer, ' ');
                     i++;
                 }
-                printf("\nMessage is %s", buffer);
-                    
-                    exit(0);
+                //printf("\nMessage is %s", buffer);
+                   // exit(0);
+                
+                //Arg 1 is our filename, arg 2 is our num of times and buffer is our text string we just created
+                update(arg[1], arg[2], buffer);
             
             }
             

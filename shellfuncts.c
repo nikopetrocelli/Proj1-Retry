@@ -87,4 +87,31 @@ void dir(){
 	exit(0);
 }
 
+void update(const char *name, int num, const char *text){
+FILE *file;
+	//does the file exist already?
+	if ((file = fopen(name,"r"))){
+		fclose(file);
+		file = fopen(name,"a")
+			for (int i = 0; i < num; i++){
+				fprintf(text);
+			}
+			fflush()
+			sleep(strlen(text/5));
+			fclose(file);
+			printf("\nUpdate is complete");
+			exit(0);
+
+		//Close the child
+		exit(0);
+	}
+	else{
+		fclose(file);
+		printf("\nThis file does not exist\n");
+		//otherwise make the file then close the child
+		exit(0);}
+
+
+}
+
 
