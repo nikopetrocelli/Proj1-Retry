@@ -197,7 +197,7 @@ int main(int argv, const char *argc[]) {
         printf("\nThe input was %s", cmd);
         printf("\n");
         args = sh_parse(cmd);
-        printf("\nThe paramaters are %p", args);
+        printf("\nThe paramaters are %s", args[0]);
         printf("\n");
        // execFlag = sh_execute(args);
 
