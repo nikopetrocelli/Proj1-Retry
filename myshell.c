@@ -136,7 +136,7 @@ int sh_execute(char **args){
 
         //Tell the user the pid		
         pid_t pid1 = getpid();
-		printf("\nThe current pid is:  %d", pid1);
+		printf("\nThe parent pid is:  %d", pid1);
 		printf("\n");
         pid_t pid2;
 
@@ -149,8 +149,7 @@ int sh_execute(char **args){
                 sleep(1);
                  //Clean up our mess by clearing out the console
                 system("clear");
-                return 0;
-                //exit(0);
+                exit(0);
             }
 
         if (fork()==0){
@@ -166,7 +165,7 @@ int sh_execute(char **args){
            // printf("%s", command);
            //If our command is to make a new file
             if (strcmp(args[0], createCMD) == 0){
-                printf("\n\n\Creating!%s", args[1]);
+                printf("\n\n\Creating %s", args[1]);
                 printf("\n");
                 create(args[1]);
                 //close the child
