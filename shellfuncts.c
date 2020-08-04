@@ -112,7 +112,7 @@ FILE *file;
 
 		//Close the child
 		exit(0);
-	//}
+	}
 	else{
 		printf("\nThis file does not exist\n");
 		//otherwise make the file then close the child
