@@ -164,6 +164,7 @@ int sh_execute(char **args){
             }
             else{
                 printf("\nInvalid command\n");
+                exit(0);
             }
 
              
