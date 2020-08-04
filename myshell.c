@@ -164,13 +164,13 @@ int sh_execute(char **args){
            // printf("%s", args[0]);
             char *command = args[0];
            // printf("%s", command);
+           //If our command is to make a new file
             if (strcmp(args[0], createCMD) == 0){
                 printf("\n\n\Creating!%s", args[1]);
                 printf("\n");
                 create(args[1]);
                 //close the child
                 exit(0);
-                //return 1;
             }
             else{
                 printf("\nInvalid command\n");
@@ -231,7 +231,7 @@ int main(int argv, const char *argc[]) {
 
         
 
-    }while (execFlag != 0);
+    }while (execFlag = 1);
 
 
 
