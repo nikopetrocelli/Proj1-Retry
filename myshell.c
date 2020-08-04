@@ -180,7 +180,7 @@ int sh_execute(char **args){
              //printf("\nin the child%s ", args[0]);
             // printf("\n");
         char currentCommand = args[0];
-        printf("%s", currentCommand);
+        printf(" %s", currentCommand, args[0]);
            // switch
 
              exit(0);
