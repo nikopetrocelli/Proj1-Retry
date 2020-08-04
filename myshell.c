@@ -179,7 +179,7 @@ int sh_execute(char **args){
         // first arg is your command
              //printf("\nin the child%s ", args[0]);
             // printf("\n");
-        char currentCommand = arg[0];
+        char currentCommand = args[0];
         printf("%s", currentCommand);
            // switch
 
