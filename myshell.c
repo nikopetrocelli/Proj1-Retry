@@ -147,13 +147,13 @@ int sh_execute(char **args){
             pid2 = getpid();
             printf("\nThe child pid is:  %d", pid2);
 		    printf("\n");
-        // first arg is your command
+        // first arg (arg[0]) is your command
            // printf("\nin the child%s ", args[0]);
            // printf("\n");
            // printf("%s", args[0]);
             char *command = args[0];
             printf("%s", command);
-            if (strcmp(string, halt) == 0){
+            if (strcmp(args[0], halt) == 0){
                 printf("\n\n\nGoodbye!\n\n\n");
                 //wait for message to be read
                 sleep(1);
