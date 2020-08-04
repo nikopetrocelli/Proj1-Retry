@@ -187,14 +187,14 @@ int sh_execute(char **args){
                     //add space between words
                     i++;
                 }
-                printf("\nMessage is %s", buffer);
+                //printf("\nMessage is %s", buffer);
                    // exit(0);
                 
                 //Arg 1 is our filename, arg 2 is our num of times and buffer is our text string we just created
-                printf("\n%d", args[2]);
+                //Need to conver this to a number, i learned this the hard way.
                 int num = atoi(args[2]);
                 printf("\n%d", num);
-                //update(args[1], args[2], buffer);
+                update(args[1], num, buffer);
             
             }
             
