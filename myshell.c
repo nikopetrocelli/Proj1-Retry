@@ -128,10 +128,10 @@ int sh_execute(char **args){
     #include "shellfuncts.h"
     //define our commands
     const char* halt = "halt";
-	const char* createNew = "create";
-	const char* update = "update";
-	const char* list = "list";
-	const char* dir = "dir";
+	const char* createCMD = "create";
+	const char* updateCMD = "update";
+	const char* listCMD = "list";
+	const char* dirCMD = "dir";
 
 
         //Tell the user the pid		
@@ -169,6 +169,7 @@ int sh_execute(char **args){
                 printf("\n");
                 create(args[1]);
                 //close the child
+                exit(0);
                 //return 1;
             }
             else{
@@ -218,11 +219,11 @@ int main(int argv, const char *argc[]) {
         //check for exit
         execFlag = sh_execute(args);
 
-        if (execFlag = 1){
+      /*  if (execFlag = 1){
             printf("\n%d", execFlag);
 
 
-        }
+        }*/
 
        // free(line);
         //free(args); 

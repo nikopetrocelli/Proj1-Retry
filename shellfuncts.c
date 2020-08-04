@@ -43,21 +43,14 @@ void send_msg(const char *param2) {
 	
 }*/
 void create(const char *name){
-	char *program = "fopen";
-
-
 	FILE *file;
 	if ((file = fopen(name,"r"))){
 		fclose(file);
 		printf("\nThis file already exists\n");
 	}
 	else{
-		execlp(program,program, name);
-
-
-
-	//	file = fopen(name, "w");
-	//	fclose(file);}
+		file = fopen(name, "w");
+		fclose(file);}
 	return;
 
 
