@@ -35,6 +35,7 @@ void initialize(){
 
 #define LINESIZE 500
 char *sh_read(void){
+   /*
     int size = LINESIZE;
     int pos = 0;
 
@@ -62,10 +63,28 @@ char *sh_read(void){
         }
         //advance to the next position in the string
         pos++;
+    }*/
+
+    char *cmd = null;
+    ssize_t size = 0; //getline will handle the size allocation
+    if(getline(&buff, &bufsize, stdin)== -1){
+        if (feof(stdin)){
+            exit(EXIT_SUCESS); //EOF
+        }
+        else{
+            perror("failure");
+            exit(EXIT_FAILURE);
+        }
+
     }
+
+    return buff
 
 
 }
+
+
+
 
 int main(int argv, const char *argc[]) {
 	(void) argv; // Make compile warnings go away - be sure to delete this line if you use the param
