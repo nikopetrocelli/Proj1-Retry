@@ -97,7 +97,7 @@ FILE *file;
 				fprintf(text);
 			}
 			fflush();
-			sleep(strlen(text/5));
+			sleep(strlen(text)/5);
 			fclose(file);
 			printf("\nUpdate is complete");
 			exit(0);
