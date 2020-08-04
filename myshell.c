@@ -148,7 +148,7 @@ int sh_execute(char **args){
                 sleep(1);
                  //Clean up our mess by clearing out the console
                 system("clear");
-                return 0;
+                exit(0);
             }
 
         if (fork()==0){
@@ -218,7 +218,7 @@ int main(int argv, const char *argc[]) {
 
         
 
-    }while (execFlag = 1);
+    }while (execFlag);
 
 
 
