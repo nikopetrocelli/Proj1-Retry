@@ -121,11 +121,11 @@ char **sh_parse(char *cmd){
             exit(0);
         }
 
-        param = strtok(NULL, TOKEN_DE);
+        
         printf("\n%s", param);
         printf("\n%s", paramList[pos]);
     }
-
+    param = strtok(NULL, TOKEN_DE);
     //mark the end of the parameters with a null key
     paramList[pos] = NULL;
 
