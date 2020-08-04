@@ -92,12 +92,14 @@ FILE *file;
 	//does the file exist already?
 	if ((file = fopen(name,"r"))){
 		fclose(file);
+		//Open the file in append mode
 		file = fopen(name,"a");
+		//loop through and append num of times
 			for (int i = 0; i < num; i++){
-				fprintf(text);
+				fprintf(file, text);
 			}
-			fflush(file);
-			sleep(strlen(text)/5);
+			fflush(file); //write file
+			sleep(strlen(text)/5); //sleep a bit
 			fclose(file);
 			printf("\nUpdate is complete");
 			exit(0);
