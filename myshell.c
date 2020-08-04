@@ -185,10 +185,9 @@ int sh_execute(char **args){
 
                     strcat(strcat(buffer, args[i])," ");
                     //add space between words
-                   // strcat(buffer, ' ');
                     i++;
                 }
-                //printf("\nMessage is %s", buffer);
+                printf("\nMessage is %s", buffer);
                    // exit(0);
                 
                 //Arg 1 is our filename, arg 2 is our num of times and buffer is our text string we just created
