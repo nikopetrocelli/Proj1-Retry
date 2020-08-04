@@ -125,8 +125,6 @@ char **sh_parse(char *cmd){
 }
 
 int sh_execute(char **args){
-    //default the flag to 1 to keep running unless you get a halt
-    int flag = 1;
     //define our commands
     const char* halt = "halt";
 	const char* create = "create";
@@ -164,7 +162,7 @@ int sh_execute(char **args){
             }
             else{
                 printf("\nInvalid command\n");
-                exit(0);
+                return 0;
             }
 
              
@@ -172,7 +170,7 @@ int sh_execute(char **args){
         }
         else{
             cpid = wait(NULL);
-            return flag;
+            return 1;
         }
 
 }
