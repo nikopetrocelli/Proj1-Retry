@@ -148,7 +148,7 @@ int sh_execute(char **args){
 
         if (fork()==0){
             //in the child process now
-            pid2 = getpid();
+            cpid = getpid();
             printf("\nThe child pid is:  %d", cpid);
 		    printf("\n");
         // first arg (arg[0]) is your command
