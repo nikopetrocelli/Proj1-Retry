@@ -231,7 +231,7 @@ int main(int argv, const char *argc[]) {
 
         
 
-    }while (execFlag = 1);
+    }while (execFlag);
 
 
 
