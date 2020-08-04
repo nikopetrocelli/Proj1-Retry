@@ -97,7 +97,7 @@ void update(const char *name, int num, const char *text){
 FILE *file;
 	//does the file exist already?
 	if (doesFileExist(name)){
-		fclose(file);
+		//fclose(file);
 		//Open the file in append mode
 		file = fopen(name,"a");
 		//loop through and append num of times
@@ -112,7 +112,7 @@ FILE *file;
 
 		//Close the child
 		exit(0);
-	}
+	//}
 	else{
 		printf("\nThis file does not exist\n");
 		//otherwise make the file then close the child
@@ -120,7 +120,7 @@ FILE *file;
 
 
 }
-
+//If the file opens, it exists and return a 1 else, return a 0
 int doesFileExist(const char* name){
 	FILE *file;
 	if (file = fopen(name, "r")){
