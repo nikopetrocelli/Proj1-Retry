@@ -125,7 +125,7 @@ char **sh_parse(char *cmd){
 }
 
 int sh_execute(char **args){
-
+    int flag = 1;
   /*  pid_t pid1, pid2;
     int stat;
 
@@ -177,18 +177,30 @@ int sh_execute(char **args){
             printf("\nThe child pid is:  %d", pid2);
 		    printf("\n");
         // first arg is your command
-            printf("\nin the child%s ", args[0]);
-            printf("\n");
-            printf("%s", args[0]);
+           // printf("\nin the child%s ", args[0]);
+           // printf("\n");
+           // printf("%s", args[0]);
 
-           // switch
+            switch(args[0]){
+                case 'halt' :
+                	printf("\n\n\nGoodbye!\n\n\n");
+                    //wait for message to be read
+                    sleep(1);
+                    //Clean up our mess by clearing out the console
+                    system("clear");
+                    //Quit the program;
+                    flag = 0;
+                    break;
+                default
+                printf("\nInvalid command\n");
+            }
 
              
 
         }
         else{
             cpid = wait(NULL);
-            return 1;
+            return flag;
         }
 
 }
