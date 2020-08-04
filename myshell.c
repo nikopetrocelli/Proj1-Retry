@@ -67,18 +67,18 @@ char *sh_read(void){
 
     char *cmd = null;
     ssize_t size = 0; //getline will handle the size allocation
-    if(getline(&buff, &bufsize, stdin)== -1){
+    if(getline(&cmd, &bufsize, stdin)== -1){
         if (feof(stdin)){
-            exit(EXIT_SUCESS); //EOF
+            exit(0); //EOF
         }
         else{
             perror("failure");
-            exit(EXIT_FAILURE);
+            exit(0);
         }
 
     }
 
-    return buff;
+    return cmd;
 
 
 }
