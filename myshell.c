@@ -164,7 +164,7 @@ int sh_execute(char **args){
            // printf("%s", args[0]);
             char *command = args[0];
            // printf("%s", command);
-            if (strcmp(args[0], create) == 0){
+            if (strcmp(args[0], createNew) == 0){
                 printf("\n\n\Creating!%s", args[1]);
                 printf("\n");
                 create(args[1]);
