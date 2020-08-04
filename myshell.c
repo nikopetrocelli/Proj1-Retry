@@ -158,11 +158,12 @@ char **sh_parse(char *cmd){
         exit(EXIT_FAILURE);
       }
     }
-
+    printf("%n%s", tokens[position]);
+    printf("%n%s", token);
     token = strtok(NULL, LSH_TOK_DELIM);
   }
   tokens[position] = NULL;
-  printf("%n%s", tokens);
+  
   return tokens;
 
 }
