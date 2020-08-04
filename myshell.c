@@ -157,8 +157,7 @@ int sh_execute(char **args){
                 sleep(1);
                  //Clean up our mess by clearing out the console
                 system("clear");
-                //Quit the program;
-                flag = 0;
+                return 0;
             }
             else{
                 printf("\nInvalid command\n");
@@ -170,7 +169,7 @@ int sh_execute(char **args){
         }
         else{
             cpid = wait(NULL);
-            return 1;
+
         }
 
 }
@@ -214,7 +213,7 @@ int main(int argv, const char *argc[]) {
 
         
 
-    }while (execFlag);
+    }while (execFlag = 1);
 
 
 
