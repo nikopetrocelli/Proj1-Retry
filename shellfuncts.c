@@ -62,7 +62,7 @@ void create(const char *name){
 }
 
 void list (const char*name){
-		FILE *file;
+		/*FILE *file;
 		char buffer[200];
 	//does the file exist ?
 	if ((file = fopen(name,"r"))){
@@ -77,7 +77,13 @@ void list (const char*name){
 		fclose(file);
 		printf("\nThis file does not exist\n");
 		//Close the child
-		exit(0);}
+		exit(0);}*/
+		if(doesFileExist(name)){
+			printf("\nHi");
+		}
+		else{
+			printf("\nBye");
+		}
 
 }
 void dir(){
@@ -90,7 +96,7 @@ void dir(){
 void update(const char *name, int num, const char *text){
 FILE *file;
 	//does the file exist already?
-	if ((file = fopen(name,"r"))){
+	if (doesFileExist(name)){
 		fclose(file);
 		//Open the file in append mode
 		file = fopen(name,"a");
@@ -108,7 +114,6 @@ FILE *file;
 		exit(0);
 	}
 	else{
-		fclose(file);
 		printf("\nThis file does not exist\n");
 		//otherwise make the file then close the child
 		exit(0);}
@@ -116,4 +121,14 @@ FILE *file;
 
 }
 
+int doesFileExist(const char* name){
+	FILE *file;
+	if (file = fopen(name, "r")){
+		fclose(file);
+		return 1;
+
+	}
+	return 0;
+
+}
 
