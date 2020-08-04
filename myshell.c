@@ -125,44 +125,15 @@ char **sh_parse(char *cmd){
 }
 
 int sh_execute(char **args){
+    //default the flag to 1 to keep running unless you get a halt
     int flag = 1;
-  /*  pid_t pid1, pid2;
-    int stat;
+    //define our commands
+    const char* halt = "halt";
+	const char* create = "create";
+	const char* update = "update";
+	const char* list = "list";
+	const char* dir = "dir";
 
-    pid1 = fork();
-
-    if (pid == 0)
-    {
-        //now we are in the child process
-        if(execvp(args[0], args) == -1)
-        {
-
-        }
-    }
-    */
-/*
-  pid_t pid, wpid;
-  int status;
-
-  pid = fork();
-  if (pid == 0) {
-    // Child process
-    if (execvp(args[0], args) == -1) {
-      perror("lsh");
-    }
-    exit(EXIT_FAILURE);
-  } else if (pid < 0) {
-    // Error forking
-    perror("lsh");
-  } else {
-    // Parent process
-    do {
-      wpid = waitpid(pid, &status, WUNTRACED);
-    } while (!WIFEXITED(status) && !WIFSIGNALED(status));
-  }
-
-  return 1;
-*/
 
         //Tell the user the pid		
         pid_t pid1 = getpid();
@@ -182,7 +153,7 @@ int sh_execute(char **args){
            // printf("%s", args[0]);
             char *command = args[0];
             printf("%s", command);
-            if (command == 'halt'{
+            if (strcmp(string, halt) == 0){
                 printf("\n\n\nGoodbye!\n\n\n");
                 //wait for message to be read
                 sleep(1);
