@@ -93,8 +93,7 @@ char *sh_read(void){
 #define BUFSIZE 64
 //delimiters for splitting the text
 #define TOKEN_DE " \t\r\n\a"
-//#define LSH_TOK_BUFSIZE 64
-//#define LSH_TOK_DELIM " \t\r\n\a"
+
 char **sh_parse(char *cmd){
 
     int size = BUFSIZE;
@@ -103,13 +102,6 @@ char **sh_parse(char *cmd){
     char **paramList = malloc(size * sizeof(char*));
     char *param;
 
-/*
-    if (!paramList){
-        printf("Error allocating memory\n");
-        exit(0);
-    }
-*/
-    
     //start to separate the string based on the previously defined delimiters
     param = strtok(cmd, TOKEN_DE);
     //loop through until the end
@@ -123,49 +115,54 @@ char **sh_parse(char *cmd){
             printf("\nToo much stuff entered\n");
             exit(0);
         }
-
-        
-        //printf("\n%s", param);
-       // printf("\n%s", paramList[pos]);
-        //printf("\nthe pos is %d", pos);
         param = strtok(NULL, TOKEN_DE);
     }
     
     //mark the end of the parameters with a null key
     paramList[pos] = NULL;
     return paramList; //return the parsed out parameters
-    
-/*
-  int bufsize = LSH_TOK_BUFSIZE, position = 0;
-  char **tokens = malloc(bufsize * sizeof(char*));
-  char *token;
 
-  if (!tokens) {
-    fprintf(stderr, "lsh: allocation error\n");
-    exit(EXIT_FAILURE);
-  }
+}
 
-  token = strtok(cmd, LSH_TOK_DELIM);
-  while (token != NULL) {
-    tokens[position] = token;
-    position++;
+int sh_execute(char **args){
 
-    if (position >= bufsize) {
-      bufsize += LSH_TOK_BUFSIZE;
-      tokens = realloc(tokens, bufsize * sizeof(char*));
-      if (!tokens) {
-        fprintf(stderr, "lsh: allocation error\n");
-        exit(EXIT_FAILURE);
-      }
+  /*  pid_t pid1, pid2;
+    int stat;
+
+    pid1 = fork();
+
+    if (pid == 0)
+    {
+        //now we are in the child process
+        if(execvp(args[0], args) == -1)
+        {
+
+        }
     }
-   // printf("%n%s", tokens[position]);
-    //printf("%n%s", token);
-    token = strtok(NULL, LSH_TOK_DELIM);
+    */
+
+  pid_t pid, wpid;
+  int status;
+
+  pid = fork();
+  if (pid == 0) {
+    // Child process
+    if (execvp(args[0], args) == -1) {
+      perror("lsh");
+    }
+    exit(EXIT_FAILURE);
+  } else if (pid < 0) {
+    // Error forking
+    perror("lsh");
+  } else {
+    // Parent process
+    do {
+      wpid = waitpid(pid, &status, WUNTRACED);
+    } while (!WIFEXITED(status) && !WIFSIGNALED(status));
   }
-  tokens[position] = NULL;
-  
-  return tokens;
-  */
+
+  return 1;
+
 
 }
 
@@ -202,6 +199,9 @@ int main(int argv, const char *argc[]) {
         for(int i =0; i < 5 ; i++)
         printf("\n%s", args[i]);
         printf("\n");
+        //check for exit
+        if(args[0] ="exit")
+            execFlag = 0;
        // execFlag = sh_execute(args);
 
        // free(line);
