@@ -173,7 +173,6 @@ int sh_execute(char **args){
         pid_t cpid;
         if (fork()==0){
             //in the child process now
-            exec();
             pid2 = getpid();
             printf("\nThe current pid is:  %d", pid1);
 		    printf("\n");
