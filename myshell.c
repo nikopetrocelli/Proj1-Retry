@@ -35,6 +35,9 @@ void initialize(){
 
 #define LINESIZE 500
 char *sh_read(void){
+   
+   //This first implementation is code I got from a tutorial online, then I found out there is a way to use the getline() function to implement this code so I swapped to that. 
+   //I left it in here as reference for myself in the future, to understand better what is actually happening
    /*
     int size = LINESIZE;
     int pos = 0;
@@ -67,6 +70,7 @@ char *sh_read(void){
 
     char *cmd = NULL;
     ssize_t size = 0; //getline will handle the size allocation
+    //use get line to scan it in until it reaches the end and then return it as cmd, it will later be parsed for arguments
     if(getline(&cmd, &size, stdin)== -1){
         if (feof(stdin)){
             exit(0); //EOF
@@ -84,6 +88,49 @@ char *sh_read(void){
 }
 
 
+//This code is also referenced from an online tutorial from brennan.io on how to split a message
+//size of the tokens
+#define BUFSIZE 64
+//delimiters for splitting the text
+#define TOKEN_DE " \t\r\n\a"
+char **sh_parse(char *cmd){
+
+    int size = BUFSIZE;
+    int pos = 0;
+
+    char **paramList = malloc(size * sizeof(char*));
+    char *param;
+
+    if (!paramList){
+        printf("Error allocating memory\n");
+        exit(0);
+    }
+
+    //start to separate the string based on the previously defined delimiters
+    param = strtok(cmd, TOKEN_DE);
+    //loop through until the end
+    while (param != NULL){
+        //set this element equal to the first input parameter
+        paramList[pos] = param;
+        pos++; //increment to the next spot for the next parameter
+
+        //if the position goes past the max size, error
+        if (pos >= size){
+            printf("\nToo much stuff entered\n");
+            exit(0)
+        }
+
+        param = strtok(NULL, TOKEN_DE);
+    }
+
+    //mark the end of the parameters with a null key
+    paramList[pos] = NULL;
+
+    return paramList; //return the parsed out parameters
+
+}
+
+
 
 
 int main(int argv, const char *argc[]) {
@@ -92,7 +139,7 @@ int main(int argv, const char *argc[]) {
 
 
     char *cmd;
-    char **args;
+    char **params;
     int execFlag;
     // print the splash screen
     initialize();
@@ -101,12 +148,18 @@ int main(int argv, const char *argc[]) {
     //loop the program
     do{
 
+        //Tell the user the pid		
+        pid_t pid1 = getpid();
+		printf("\nThe current pid is:  %d", pid1);
+		printf("\n");
         //get the user input
         printf("> ");
         cmd = sh_read();
-        printf("\n%s", cmd);
+        printf("\nThe input was %s", cmd);
         printf("\n");
-        //args = sh_split_line(cmd);
+        params = sh_parse(cmd);
+        printf("\nThe paramaters are %s", params);
+        printf("\n");
        // execFlag = sh_execute(args);
 
        // free(line);
