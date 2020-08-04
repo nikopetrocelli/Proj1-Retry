@@ -122,7 +122,7 @@ char **sh_parse(char *cmd){
         }
 
         
-        printf("\n%s", param);
+        //printf("\n%s", param);
         printf("\n%s", paramList[pos]);
         param = strtok(NULL, TOKEN_DE);
     }
