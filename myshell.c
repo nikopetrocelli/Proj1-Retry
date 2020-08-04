@@ -143,6 +143,7 @@ int sh_execute(char **args){
                 sleep(1);
                  //Clean up our mess by clearing out the console
                 system("clear");
+                //close the main process
                 exit(0);
             }
 
@@ -196,7 +197,7 @@ int main(int argv, const char *argc[]) {
     
 
     //loop the program
-    do{
+    While(1){
         //Tell the user the pid		
         pid_t pid1 = getpid();
 		printf("\nThe parent pid is:  %d", pid1);
@@ -231,7 +232,7 @@ int main(int argv, const char *argc[]) {
 
         
 
-    }while (execFlag);
+    };
 
 
 
