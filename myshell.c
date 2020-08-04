@@ -202,7 +202,8 @@ int main(int argv, const char *argc[]) {
         //check for exit
         if(args[0] ="exit")
             execFlag = 0;
-       // execFlag = sh_execute(args);
+       else
+            execFlag = sh_execute(args);
 
        // free(line);
         //free(args); 
