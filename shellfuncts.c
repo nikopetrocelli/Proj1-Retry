@@ -79,10 +79,11 @@ void list (const char*name){
 		//Close the child
 		exit(0);}*/
 		if(doesFileExist(name)){
-			printf("\nHi");
+			execl("/bin/cat", name);
 		}
 		else{
-			printf("\nBye");
+			printf("\nThe file does not exist");
+			exit(0);
 		}
 
 }
