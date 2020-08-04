@@ -101,11 +101,12 @@ char **sh_parse(char *cmd){
     char **paramList = malloc(size * sizeof(char*));
     char *param;
 
+/*
     if (!paramList){
         printf("Error allocating memory\n");
         exit(0);
     }
-
+*/
     //start to separate the string based on the previously defined delimiters
     param = strtok(cmd, TOKEN_DE);
     //loop through until the end
@@ -121,6 +122,7 @@ char **sh_parse(char *cmd){
         }
 
         param = strtok(NULL, TOKEN_DE);
+        printf("\n%s", param);
         printf("\n%s", paramList[pos]);
     }
 
