@@ -185,9 +185,10 @@ int sh_execute(char **args){
                     strcat(buffer, args[i]);
                     i++;
                 }
-                printf("\nMessage is %s", buffer);};
+                printf("\nMessage is %s", buffer);
                     
                     exit(0);
+            
             }
             
             else{
