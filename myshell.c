@@ -35,12 +35,7 @@ void initialize(){
 
 #define LINESIZE 500
 char *sh_read(void){
-    char buff[LINESIZE];
-    
-	
-
-
-   int size = LINESIZE;
+    int size = LINESIZE;
     int pos = 0;
 
     char *buff = malloc(sizeof(char)*size);
