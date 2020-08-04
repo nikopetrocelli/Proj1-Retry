@@ -178,9 +178,11 @@ int sh_execute(char **args){
                 char buffer [500];
                 //for (int i = 0; i < 10; i++){
                    // printf("\nUpdating %s", args[i]);}
-                int i = 0;
+                //message data starts at 3rd arg
+                int i = 3 ;
+                //Concatonate the arguments to create the message
                 while(args[i] != NULL){
-                    strcat(buffer, args[i];
+                    strcat(buffer, args[i]);
                     i++;
                 }
                 printf("\nMessage is %s", buffer);};
