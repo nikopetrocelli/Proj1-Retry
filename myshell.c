@@ -182,17 +182,16 @@ int sh_execute(char **args){
            // printf("%s", args[0]);
             char *command = args[0];
             printf("%s", command);
-            switch(command){
-                case 'halt' :
-                	printf("\n\n\nGoodbye!\n\n\n");
-                    //wait for message to be read
-                    sleep(1);
-                    //Clean up our mess by clearing out the console
-                    system("clear");
-                    //Quit the program;
-                    flag = 0;
-                    break;
-                default:
+            if (command == 'halt'{
+                printf("\n\n\nGoodbye!\n\n\n");
+                //wait for message to be read
+                sleep(1);
+                 //Clean up our mess by clearing out the console
+                system("clear");
+                //Quit the program;
+                flag = 0;
+            }
+            else{
                 printf("\nInvalid command\n");
             }
 
