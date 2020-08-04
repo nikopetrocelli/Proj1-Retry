@@ -214,15 +214,13 @@ int main(int argv, const char *argc[]) {
         printf("\nThe input was %s", cmd);
         printf("\n");
         args = sh_parse(cmd);
-        printf("\nThe paramaters are %s");
-        for(int i =0; i < 5 ; i++)
+       //debug lines
+       // printf("\nThe paramaters are %s");
+       /* for(int i =0; i < 5 ; i++)
         printf("\n%s", args[i]);
-        printf("\n");
+        printf("\n"); */
         //check for exit
-        if(args[0] ="exit")
-            execFlag = 0;
-       else
-            execFlag = sh_execute(args);
+        execFlag = sh_execute(args);
 
        // free(line);
         //free(args); 
