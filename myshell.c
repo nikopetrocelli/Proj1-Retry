@@ -90,23 +90,26 @@ char *sh_read(void){
 
 //This code is also referenced from an online tutorial from brennan.io on how to split a message
 //size of the tokens
-#define BUFSIZE 64
+//#define BUFSIZE 64
 //delimiters for splitting the text
-#define TOKEN_DE " \t\r\n\a"
+//#define TOKEN_DE " \t\r\n\a"
+#define LSH_TOK_BUFSIZE 64
+#define LSH_TOK_DELIM " \t\r\n\a"
 char **sh_parse(char *cmd){
-
+/*
     int size = BUFSIZE;
     int pos = 0;
 
     char **paramList = malloc(size * sizeof(char*));
     char *param;
-
+*/
 /*
     if (!paramList){
         printf("Error allocating memory\n");
         exit(0);
     }
 */
+    /*
     //start to separate the string based on the previously defined delimiters
     param = strtok(cmd, TOKEN_DE);
     //loop through until the end
@@ -131,6 +134,35 @@ char **sh_parse(char *cmd){
     //mark the end of the parameters with a null key
     paramList[pos] = NULL;
     return paramList; //return the parsed out parameters
+    */
+
+  int bufsize = LSH_TOK_BUFSIZE, position = 0;
+  char **tokens = malloc(bufsize * sizeof(char*));
+  char *token;
+
+  if (!tokens) {
+    fprintf(stderr, "lsh: allocation error\n");
+    exit(EXIT_FAILURE);
+  }
+
+  token = strtok(cmd, LSH_TOK_DELIM);
+  while (token != NULL) {
+    tokens[position] = token;
+    position++;
+
+    if (position >= bufsize) {
+      bufsize += LSH_TOK_BUFSIZE;
+      tokens = realloc(tokens, bufsize * sizeof(char*));
+      if (!tokens) {
+        fprintf(stderr, "lsh: allocation error\n");
+        exit(EXIT_FAILURE);
+      }
+    }
+
+    token = strtok(NULL, LSH_TOK_DELIM);
+  }
+  tokens[position] = NULL;
+  return tokens;
 
 }
 
