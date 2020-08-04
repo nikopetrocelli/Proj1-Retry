@@ -44,16 +44,33 @@ void send_msg(const char *param2) {
 }*/
 void create(const char *name){
 	FILE *file;
+	//does the file exist already?
 	if ((file = fopen(name,"r"))){
 		fclose(file);
 		printf("\nThis file already exists\n");
+		//Close the child
+		exit(0);
 	}
 	else{
 		file = fopen(name, "w");
-		fclose(file);}
-	return;
+		fclose(file);
+		//otherwise make the file then close the child
+		exit(0);}
+
+	
+
+}
+
+void list (const char*name){
 
 
+
+}
+void dir(){
+	//List the current files in the directory
+	execl("/bin/ls", "ls", NULL);
+	//close the child
+	exit(0);
 }
 
 

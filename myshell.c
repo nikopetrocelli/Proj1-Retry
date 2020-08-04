@@ -164,7 +164,16 @@ int sh_execute(char **args){
                 printf("\n");
                 create(args[1]);
                 //close the child
-                exit(0);
+               // exit(0);
+            }
+            else if (strcmp(args[0], listCMD) == 0){
+                printf("\n\n\listing %s", args[1]);
+                printf("\n");
+              //  list(args[1]);
+                //close the child
+                exit(0);}
+            else (strcmp(args[0], dirCMD) == 0){
+                dir();
             }
             else{
                 printf("\nInvalid command\n");
@@ -206,25 +215,12 @@ int main(int argv, const char *argc[]) {
 
    
         //get the user input
-
         printf("> ");
         cmd = sh_read();
-       // printf("\nThe input was %s", cmd);
-        //printf("\n");
+        //Separate out the commands and the arguments
         args = sh_parse(cmd);
-       //debug lines
-       // printf("\nThe paramaters are %s");
-       /* for(int i =0; i < 5 ; i++)
-        printf("\n%s", args[i]);
-        printf("\n"); */
-        //check for exit
+        //Run the executions
         execFlag = sh_execute(args);
-
-      /*  if (execFlag = 1){
-            printf("\n%d", execFlag);
-
-
-        }*/
 
        // free(line);
         //free(args); 
