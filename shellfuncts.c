@@ -96,7 +96,7 @@ FILE *file;
 			for (int i = 0; i < num; i++){
 				fprintf(text);
 			}
-			fflush()
+			fflush();
 			sleep(strlen(text/5));
 			fclose(file);
 			printf("\nUpdate is complete");
