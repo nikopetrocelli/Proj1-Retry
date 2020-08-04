@@ -177,8 +177,11 @@ int sh_execute(char **args){
             printf("\nThe child pid is:  %d", pid2);
 		    printf("\n");
         // first arg is your command
-             printf("\nin the child%s ", args[0]);
-             printf("\n");
+             //printf("\nin the child%s ", args[0]);
+            // printf("\n");
+        char currentCommand = arg[0];
+        printf("%s", currentCommand);
+           // switch
 
              exit(0);
 
