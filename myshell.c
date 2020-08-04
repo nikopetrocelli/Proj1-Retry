@@ -27,7 +27,7 @@ void initialize(){
 	sleep(2);
 	//clear the screen
 	system("clear");
-	printf("\nInput a command \n");
+	//printf("\nInput a command \n");
 
     return;
 
@@ -139,7 +139,7 @@ int main(int argv, const char *argc[]) {
 
 
     char *cmd;
-    char **params;
+    char **args;
     int execFlag;
     // print the splash screen
     initialize();
@@ -153,12 +153,13 @@ int main(int argv, const char *argc[]) {
 		printf("\nThe current pid is:  %d", pid1);
 		printf("\n");
         //get the user input
+
         printf("> ");
         cmd = sh_read();
         printf("\nThe input was %s", cmd);
         printf("\n");
-        params = sh_parse(cmd);
-        printf("\nThe paramaters are %s", params);
+        args = sh_parse(cmd);
+        printf("\nThe paramaters are %s", args);
         printf("\n");
        // execFlag = sh_execute(args);
 
