@@ -134,14 +134,8 @@ int sh_execute(char **args){
 	const char* dirCMD = "dir";
 
 
-        //Tell the user the pid		
-        pid_t pid1 = getpid();
-		printf("\nThe parent pid is:  %d", pid1);
-		printf("\n");
-        pid_t pid2;
 
-        pid_t cpid;
-
+     pid_t cpid;
         //before creating a child process, check for exit
         if (strcmp(args[0], halt) == 0){
                 printf("\n\n\nGoodbye!\n\n\n");
@@ -202,7 +196,13 @@ int main(int argv, const char *argc[]) {
 
     //loop the program
     do{
+        //Tell the user the pid		
+        pid_t pid1 = getpid();
+		printf("\nThe parent pid is:  %d", pid1);
+		printf("\n");
+        pid_t pid2;
 
+   
         //get the user input
 
         printf("> ");
