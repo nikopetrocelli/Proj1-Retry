@@ -61,24 +61,10 @@ void create(const char *name){
 }
 
 void list (const char*name){
-		/*FILE *file;
-		char buffer[200];
-	//does the file exist ?
-	if ((file = fopen(name,"r"))){
-		//snprintf('list ', bufsize, "cat %s", name);
-		execl("/bin/cat", "cat", name);
-		fclose(file);
-		//Close the child
-		exit(0);
-	}
-	//Else no it doesn't exist
-	else{
-		fclose(file);
-		printf("\nThis file does not exist\n");
-		//Close the child
-		exit(0);}*/
+
 		if(doesFileExist(name)){
-			execl("/bin/cat", name);
+			snprintf(command, bufsize, "cat %s", <name>);
+			execl(command, "cat", <name>);
 		}
 		else{
 			printf("\nThe file does not exist");
@@ -97,7 +83,7 @@ void update(const char *name, int num, const char *text){
 FILE *file;
 	//does the file exist already?
 	if (doesFileExist(name)){
-		//fclose(file);
+		
 		//Open the file in append mode
 		file = fopen(name,"a");
 		//loop through and append num of times
