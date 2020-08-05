@@ -123,7 +123,7 @@ char **sh_parse(char *cmd){
 
 }
 
-int sh_execute(char **args){
+void sh_execute(char **args){
     #include "shellfuncts.h"
     //define our commands
     const char* halt = "halt";
@@ -218,7 +218,7 @@ int main(int argv, const char *argc[]) {
 
     char *cmd;
     char **args;
-    int execFlag;
+   // int execFlag;
     // print the splash screen
     initialize();
     
@@ -238,7 +238,7 @@ int main(int argv, const char *argc[]) {
         //Separate out the commands and the arguments
         args = sh_parse(cmd);
         //Run the executions
-        execFlag = sh_execute(args);
+        sh_execute(args);
        
 
     };
