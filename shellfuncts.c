@@ -81,7 +81,7 @@ FILE *file;
 //If the file opens, it exists and return a 1 else, return a 0
 int doesFileExist(const char* name){
 	FILE *file;
-	if (file = fopen(name, "r")){
+	if ((file = fopen(name, "r"))){
 		fclose(file);
 		return 1;
 
