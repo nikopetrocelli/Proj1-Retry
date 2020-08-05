@@ -60,7 +60,7 @@ FILE *file;
 		file = fopen(name,"a");
 		//loop through and append num of times
 			for (int i = 0; i < num; i++){
-				fprintf(file, text);
+				fprintf(file, "%s ", text);
 			}
 			fflush(file); //write file
 			sleep(strlen(text)/5); //sleep a bit
