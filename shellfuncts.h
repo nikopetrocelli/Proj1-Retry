@@ -14,5 +14,6 @@ void create(const char *name);
 void update(const char *name, int num, const char *text);
 void list (const char*name);
 void dir();
+int doesFileExist(const char* name);
 
 
