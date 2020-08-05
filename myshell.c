@@ -4,6 +4,12 @@
  *
  *************************************************************************************/
 
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include "shellfuncts.h"
 
 
 
@@ -202,14 +208,6 @@ int sh_execute(char **args){
 }
 
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/types.h>
-#include <readline/readline.h>
-#include <readline/history.h>
-#include "shellfuncts.h"
 
 
 int main(int argv, const char *argc[]) {
