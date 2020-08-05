@@ -153,7 +153,6 @@ int sh_execute(char **args){
 		    printf("\n");
         // first arg (arg[0]) is your command
           
-            char *command = args[0];
           
            //If our command is to make a new file
             if (strcmp(args[0], createCMD) == 0){
