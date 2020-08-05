@@ -65,7 +65,8 @@ void list (const char*name){
 		if(doesFileExist(name)){
 			char command[500];
 			snprintf(command, 256, "cat %s", name);
-			execl(command, "cat", name);
+			execl("/bin/cat", "cat", name);
+			execl()
 			//execv("/bin/cat", name);
 			printf("hmm");
 			exit(0);
