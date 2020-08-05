@@ -63,11 +63,12 @@ void create(const char *name){
 void list (const char*name){
 
 		if(doesFileExist(name)){
-			//char buffer[500];
-			//int j = snprintf(buffer, 256, "cat %s", name);
-			//execl(j, "cat", name);
-			execv("/bin/cat", name);
+			char command[500];
+			snprintf(command, 256, "cat %s", name);
+			execl(command, "cat", name);
+			//execv("/bin/cat", name);
 			printf("hmm");
+			exit(0);
 		}
 		else{
 			printf("\nThe file does not exist");
