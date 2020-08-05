@@ -187,7 +187,6 @@ void sh_execute(char **args){
                 //Arg 1 is our filename, arg 2 is our num of times and buffer is our text string we just created
                 //Need to conver this to a number, i learned this the hard way.
                 int num = atoi(args[2]);
-                printf("\n%d", num);
                 update(args[1], num, buffer);
             
             }
