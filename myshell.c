@@ -4,14 +4,6 @@
  *
  *************************************************************************************/
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/types.h>
-#include <readline/readline.h>
-#include <readline/history.h>
-#include "shellfuncts.h"
 
 
 
@@ -153,11 +145,9 @@ int sh_execute(char **args){
             printf("\nThe child pid is:  %d", cpid);
 		    printf("\n");
         // first arg (arg[0]) is your command
-           // printf("\nin the child%s ", args[0]);
-           // printf("\n");
-           // printf("%s", args[0]);
+          
             char *command = args[0];
-           // printf("%s", command);
+          
            //If our command is to make a new file
             if (strcmp(args[0], createCMD) == 0){
                 printf("\n\n\Creating %s", args[1]);
@@ -176,8 +166,7 @@ int sh_execute(char **args){
             }
             else if (strcmp(args[0], updateCMD)==0){
                 char buffer [500];
-                //for (int i = 0; i < 10; i++){
-                   // printf("\nUpdating %s", args[i]);}
+             
                 //message data starts at 3rd arg
                 int i = 3 ;
                 //Concatonate the arguments to create the message
@@ -187,8 +176,7 @@ int sh_execute(char **args){
                     //add space between words
                     i++;
                 }
-                //printf("\nMessage is %s", buffer);
-                   // exit(0);
+                
                 
                 //Arg 1 is our filename, arg 2 is our num of times and buffer is our text string we just created
                 //Need to conver this to a number, i learned this the hard way.
@@ -214,6 +202,14 @@ int sh_execute(char **args){
 }
 
 
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <readline/readline.h>
+#include <readline/history.h>
+#include "shellfuncts.h"
 
 
 int main(int argv, const char *argc[]) {
@@ -244,12 +240,7 @@ int main(int argv, const char *argc[]) {
         args = sh_parse(cmd);
         //Run the executions
         execFlag = sh_execute(args);
-
-       // free(line);
-        //free(args); 
-
-
-        
+       
 
     };
 
