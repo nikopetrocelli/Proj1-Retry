@@ -35,7 +35,7 @@ void list (const char*name){
 			char command[500];
 			snprintf(command, 256, "cat %s", name);
 			//read it
-			execl("/bin/cat", "cat", name);
+			execl("/bin/cat", "cat", name, NULL);
 			exit(0);
 		}
 		else{
