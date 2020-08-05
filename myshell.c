@@ -214,7 +214,12 @@ int sh_execute(char **args){
 int main(int argv, const char *argc[]) {
 	(void) argv; // Make compile warnings go away - be sure to delete this line if you use the param
 	(void) argc; // Make compile warnings go away - be sure to delete this line if you use the param
-
+#include "shellfuncts.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
 
     char *cmd;
     char **args;
