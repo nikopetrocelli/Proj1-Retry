@@ -66,6 +66,7 @@ void list (const char*name){
 			char buffer[500];
 			int j = snprintf(buffer, 256, "cat %s", name);
 			execl(j, "cat", name);
+			printf("hmm");
 		}
 		else{
 			printf("\nThe file does not exist");
