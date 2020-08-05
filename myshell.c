@@ -37,38 +37,6 @@ void initialize(){
 #define LINESIZE 500
 char *sh_read(void){
    
-   //This first implementation is code I got from a tutorial online, then I found out there is a way to use the getline() function to implement this code so I swapped to that. 
-   //I left it in here as reference for myself in the future, to understand better what is actually happening
-   /*
-    int size = LINESIZE;
-    int pos = 0;
-
-    char *buff = malloc(sizeof(char)*size);
-    int c;
-
-    if (!buff){
-        fprintf(stderr,"shell: mem error\n");
-        exit(0);
-
-    }
-
-    while (1){
-        // read a character
-        c = getchar();
-        //if we are at the end set a null and return 
-        if (c==EOF || c =='\n'){
-            buff[pos] = '\0';
-            return buff;
-
-        }
-        //if we aren't at the end, then add the character to the string
-        else{
-            buff[pos] = c;
-        }
-        //advance to the next position in the string
-        pos++;
-    }*/
-
     char *cmd = NULL;
     ssize_t size = 0; //getline will handle the size allocation
     //use get line to scan it in until it reaches the end and then return it as cmd, it will later be parsed for arguments
@@ -158,13 +126,13 @@ void sh_execute(char **args){
           
            //If our command is to make a new file
             if (strcmp(args[0], createCMD) == 0){
-                printf("\n\n\Creating %s", args[1]);
+                printf("\n\nCreating %s", args[1]);
                 printf("\n");
                 create(args[1]);
             }
             //if your command is to list
             else if (strcmp(args[0], listCMD) == 0){
-                printf("\n\n\listing %s", args[1]);
+                printf("\n\nlisting %s", args[1]);
                 printf("\n");
                 list(args[1]);
                 }
