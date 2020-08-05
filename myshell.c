@@ -204,6 +204,7 @@ int sh_execute(char **args){
             cpid = wait(NULL);
 
         }
+        return 1;
 
 }
 
